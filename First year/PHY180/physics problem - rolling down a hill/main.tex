@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+\usepackage{mypackagesv2}
+\setlength\parindent{0pt}
+
+\begin{document}
+
+
+\textbf{An alternate approach:} consider the angular momentum measured from the center of mass and the net force of the ball. \\
+
+Set up forces equation along the direction of the slope. $F_f$: force of friction, $m$: mass of ball
+\begin{equation}
+    ma = mg\sin\theta - F_{f}
+\end{equation}
+If you are at the CM, friction is the only force that provides a torque. $F_G$ does not affect the angular impact ($F_G$ and $r$ vectors are parallel, so cross product is 0). This gives 
+\begin{align}
+    \sum \tau &= I \alpha \nonumber \\
+    I\alpha &= \vec{r} \times \vec{F_f}  \\
+            &= rF_f \nonumber \\
+    F_f     &= \frac{I\alpha}{r}
+\end{align}
+Finally, note if the ball rolls without slipping, we can say $a = \alpha r$. We have 3 unknowns and three equations. Solve for $a$, starting from Equation (1).
+\begin{align}
+    ma &= mg\sin\theta - F_{f} \nonumber \\
+    ma &= mg\sin\theta - \frac{I\alpha}{r}\nonumber \\
+    ma &= mg\sin\theta - \frac{I a}{r^2} \nonumber \\
+    \intertext{sub $I = \frac{2}{5}mr^2$}
+    ma &= mg\sin\theta - \frac{2 ma}{5} \nonumber \\
+    a &= \frac{5}{7}g\sin\theta
+\end{align}
+Remember that $F_f = \mu\cdot mg\cos\theta$. Go back to Equation (1), sub in (4) and $F_f = \mu \cos\theta$. Solve for $\mu$.
+
+\begin{align*}
+    m \frac{5}{7} g \sin\theta &= mg\sin\theta - \mu mg\cos\theta \\
+    \mu \cos\theta &= \frac{2}{7}\sin\theta \\
+    \mu &= \frac{2}{7}\tan\theta
+\end{align*}
+
+\end{document}

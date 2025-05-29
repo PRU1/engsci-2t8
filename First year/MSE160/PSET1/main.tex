@@ -1,0 +1,180 @@
+\documentclass[answers]{exam}
+%\usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+\usepackage{mypackagesv3}
+\usepackage{booktabs} % For better table aesthetics
+\setlength\parindent{0pt}
+
+
+\begin{document}
+
+   \begin{questions} 
+
+    \let\oldsolution\solution
+    \renewcommand{\solution}{\color{pinkishpurpledark}\oldsolution}
+
+    \question[3] Convert the following units:
+    \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increases row height for better readability
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Unit 1}} & \multicolumn{2}{c|}{\textbf{Unit 2}} \\ \hline
+        1 & Kg & \textcolor{pinkishpurpledark}{1000} & mg \\ \hline
+        20 & nm & \textcolor{pinkishpurpledark}{200} & \r{A} \\ \hline
+        0.5 & kN & \textcolor{pinkishpurpledark}{500} & N \\ \hline
+        2 & MPa & \textcolor{pinkishpurpledark}{$2\times 10^6$} & Pa \\ \hline
+        5 & m\textsuperscript{2} & \textcolor{pinkishpurpledark}{50000}  & cm\textsuperscript{2} \\ \hline
+        3000 & cm\textsuperscript{3} & \textcolor{pinkishpurpledark}{$3 \times 10^{-3}$} & m\textsuperscript{3} \\ \hline
+    \end{tabularx}
+\end{table}
+
+\question[3] Complete the following table on materials classifications
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increases row height for better readability
+    \begin{tabularx}{\textwidth}{|c|X|X|X|}
+        \hline
+         & \textbf{Materials Class Name} & \textbf{2 Characteristic Properties} & \textbf{Two Examples of Each Class} \\ \hline
+        1 & \textcolor{pinkishpurpledark}{Ceramics} & \textcolor{pinkishpurpledark}{Brittle, high melting point}  &  \textcolor{pinkishpurpledark}{Quartz, glass} \\ \hline
+        2 & \textcolor{pinkishpurpledark}{Metals} & \textcolor{pinkishpurpledark}{Ductile, conductive} &  \textcolor{pinkishpurpledark}{6000 series aluminum, brass} \\ \hline
+        3 & \textcolor{pinkishpurpledark}{Polymers} & \textcolor{pinkishpurpledark}{Strong in tension, non-conductive}  &  \textcolor{pinkishpurpledark}{Polyethylene, Teflon} \\ \hline
+    \end{tabularx}
+\end{table}
+
+\question[6] \textcolor{black}{Define Hooke’s Law, engineering stress and engineering strain with words and then define the equations that define each as function of force, length and/or cross-sectional area.}
+
+\begin{solution}
+    Hooke's law states that the change in length of certain materials is linearly proportional to the force applied to the material. Such materials are called \textit{elastic} materials.
+    \begin{equation*}
+        F = -k\Delta x
+    \end{equation*}
+    {\small where $F$ is the force applied, $k$ is a material dependent proportionality constant, and $\Delta x$ is the material's change in length. The relationship is negative since the restoring force is opposite to the direction of the force applied.}
+
+    Engineering stress is the ratio between an applied force and the starting cross-sectional area of a material. 
+    \begin{equation*}
+        \sigma = \frac{F}{A_0}
+    \end{equation*}
+    {\small where $F$ is the applied force and $A_0$ is the original cross sectional area of a material.}
+
+    Engineering strain is the ratio of between the change in length of a material and its original length when a force is applied. 
+    \begin{equation*}
+        \varepsilon = \frac{\Delta L}{L}
+    \end{equation*}
+    {\small where $\Delta L$ is the material's change in length, and $L$ is its original length.}
+
+    
+\end{solution}
+
+
+
+\question You work at an independent lab that conducts materials testing. To
+determine the tensile properties of a new alloy you are provided a tensile
+coupon with the following dimensions in the reduced section: 2mm x 8mm x 50mm
+(assuming the longest dimension is the length).
+\begin{parts}
+    \part[2] If the coupon elongated by 0.1mm when loaded axially with 1kN, what is the Young's Modulus of the alloy?
+
+    \begin{solution}
+        \begin{align*}
+            E &= \frac{\sigma}{\varepsilon} \\
+              &= \frac{1000 / (2 \cdot 8 \cdot 10^{-6})}{0.1/50} \\
+            E &= 3.125 \times 10^{10} \text{ Pa} \\
+            \therefore E &= \boxed{3 \times 10^{10} \text{ Pa \it (1 s.f.)}}
+        \end{align*}
+    \end{solution}
+
+    \part[2] If the component has a density of 6 g/cm\textsuperscript{3}, is the Performance Index for a light stiff beam fabricated from this material going to better or worse than steel?
+    \begin{solution}
+        \begin{equation*}
+            \begin{split}
+            \text{MPI mystery material} &= \frac{\sqrt{E}}{\rho} \\
+                       &= \frac{\sqrt{3.125\cdot 10^{10}}}{6\cdot10^{-3}/10^{-6}} \\
+                       &\approx 29.46 \\
+                       &= \boxed{30 \text{ m\textsuperscript{2.5}s\textsuperscript{-1}kg\textsuperscript{-0.5} \it (1 s.f.)}} \\
+            \end{split}
+            \begin{split}
+            \text{MPI steel} &= \frac{\sqrt{E}}{\rho} \\
+                       &= \frac{\sqrt{200\cdot 10^{9}}}{7850} \\
+                       &\approx 56.96 \\
+                       &= \boxed{60 \text{ m\textsuperscript{2.5}s\textsuperscript{-1}kg\textsuperscript{-0.5} \it (1 s.f.)}}
+            \end{split}
+        \end{equation*}
+        \textit{I Googled the density to be 7850 kg/m\textsuperscript{3} and used $E_\text{steel}=200 \text{ GPa.}$}
+        The MPI for steel is higher, so the mystery material does not perform as well as steel.
+    \end{solution}
+\end{parts}
+\question For an unknown alloy, the stress at which plastic deformation begins
+is 345 MPa, and the modulus of elasticity is 103 GPa. You are given 0.73m long
+hollow brass cylinder with an internal external diameter of 1.9cm and an
+internal diameter of 1.75cm, which will be required to support a large
+chandelier.
+\begin{parts}
+    \part[3] What is the maximum load that can be supported without plastic
+    deformation?
+    \begin{solution}
+        \begin{align*}
+            \sigma_\text{cr} &= \frac{F}{A} \\
+                           F &= \sigma_\text{cr} A \\
+                             &= 345\cdot 10^6 \cdot (\pi(1.9^2-1.75^2)\cdot 0.25 \cdot 10^{-4}) \\
+                             &= 14835 \text{ N} \\
+                             &= \boxed{15 \text{ kN} \text{(\it 2 s.f.)}}
+        \end{align*}
+    \end{solution}
+    \part[2] What is the maximum length to which it can be stretched without
+    causing plastic deformation?
+    \begin{solution}
+        \begin{align*}
+        \Delta L &= L \cdot \frac{\sigma_\text{cr}}{E} \\
+                 &= 0.73 \cdot \frac{345\cdot 10^6}{103\cdot 10^9} \\
+                 &= 2.5 \text{ mm} \text{\it ( 2 s.f.)}
+                 \intertext{The maximum length it can be stretched is 0.73 m + 2.5 mm = $\boxed{733 \text{ mm \it 3 s.f.}}$}
+        \end{align*}
+        
+        
+    \end{solution}
+\end{parts}
+\question A cylinder ($\varnothing$ = 20cm, $l$ = 0.5m) is to be manufactured and will be required support up to $3\times10^6$ N in tension. The current material chosen has been shown to elongate 0.5mm under these loading conditions. Due to the tolerances of fit, the final component must not decrease in diameter more than 55µm. From the provided list, choose an appropriate material for this component. 
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increases row height for better readability
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+         & \textbf{Poisson's Ratio} & \textbf{E} & \textbf{Shear Modulus} \\ \hline
+        \textbf{Aluminum, 6061-T6} & 0.35 & 69 GPa & 26 GPa \\ \hline
+        \textbf{Aluminum, 2024-T4} & 0.32 & 73 GPa & 28 GPa \\ \hline
+        \textbf{Beryllium Copper} & 0.285 & 125 GPa & 50 GPa \\ \hline
+        \textbf{Brass, 70-30} & 0.331 & 110 GPa & 37 GPa \\ \hline
+        \textbf{Bronze} & 0.34 & 70 GPa & 25 GPa \\ \hline
+        \textbf{Copper} & 0.355 & 110 GPa & 48 GPa \\ \hline
+        \textbf{Cast Iron} & 0.211 & 120 GPa & 39 GPa \\ \hline
+        \textbf{Lead} & 0.431 & 13 GPa & 4.9 GPa \\ \hline
+        \textbf{Magnesium Alloy} & 0.281 & 42 GPa & 60 GPa \\ \hline
+    \end{tabular}
+\end{table}
+\begin{solution}
+    Since the rod has strains radially and longitudinally, we can use the relation $G=\frac{E}{2(1+\nu)}$. We have two parameters we can solve for with given info: $E$ and $\nu$. Once we solve this, we can find the minimum shear modulus that the material should possess in order to be selected.
+    \begin{equation*}
+        \begin{split}
+            \text{Calculating $E$} \\
+            E &= \frac{\sigma_\text{cr}}{\varepsilon} \\
+              &= \frac{3\cdot 10^6 / \pi (10^2)\cdot10^-4}{0.5/500} \\
+              &= 95 \text{ GPa} \text{\it ( 2 s.f.)}
+        \end{split}
+        \begin{split}
+            \text{Calculating $\nu$} \\
+            \nu &= \frac{\varepsilon_\text{radial}}{\varepsilon_{axial}} \\
+                &= \frac{55\cdot 10^{-6}/20\cdot10^-2}{0.5 \cdot 10^{-3}/0.5} \\
+                &= 0.28 \text{ \it (2 s.f.)}
+        \end{split}
+    \end{equation*}
+    This suggests that $G = \frac{95\cdot 10^9}{2(1+0.28)} = 38 \text{ GPa}$.
+    
+    \noindent\fbox{\parbox{11.5 cm}{Cast iron is a suitable material since $\nu < 0.28$, $E > 95 \text{ GPa}$, $G > 38 \text{ MPa}$.}}
+\end{solution}
+
+
+   \end{questions}
+
+\end{document}

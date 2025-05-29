@@ -1,0 +1,7 @@
+\contentsline {chapter}{\numberline {I}A Design First Approach to Engineering Design}{1}{chapter.1}%
+\contentsline {section}{\numberline {$\S $1\hspace {.1em}.\hspace {.2em}}What is Engineering Design?}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {II}Two Key Learnings}{3}{chapter.2}%
+\contentsline {section}{\numberline {$\S $1\hspace {.1em}.\hspace {.2em}}Every Detail Counts}{3}{section.2.1}%
+\contentsline {section}{\numberline {$\S $2\hspace {.1em}.\hspace {.2em}}Learning 2: Iterative Design}{4}{section.2.2}%
+\contentsline {chapter}{\numberline {III}An Exercise in Engineering Design}{5}{chapter.3}%
+\contentsfinish 

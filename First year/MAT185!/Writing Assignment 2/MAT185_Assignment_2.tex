@@ -1,0 +1,692 @@
+\documentclass[10pt,addpoints]{exam} %% no solution
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[top=2.0cm,bottom=2.0cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{soul}
+\usepackage{libertine}
+\usepackage{lipsum}
+\usepackage{siunitx}
+\usepackage{xspace}
+\usepackage[labelfont=bf]{caption}
+\usepackage[hidelinks, urlcolor=blue, linkcolor=black, colorlinks=true]{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage[absolute]{textpos}
+
+\usepackage[normalem]{ulem}
+
+\newcommand{\todo}[1]{\hl{\textbf{ToDo:}~#1}}
+
+%% define course title
+\newcommand{\course}{MAT185}
+\newcommand{\assignmenttitle}{Assignment 2}
+
+%% header and footer
+\firstpageheader{}{}{\textbf{{\color{red} Due}: 10:00pm, Tuesday Feb. 4, 2025}}
+\firstpageheadrule
+\runningheader{}{Page~\thepage~of~\numpages}{\course~--~\assignmenttitle}
+\footer{}{}{}
+
+\setlength\parindent{0pt} % no indentation in document
+
+%% formats exam class
+\qformat{\textbf{Question \thequestiontitle:}\hfill} % title of question 
+\boxedpoints
+\pointpoints{mark}{marks}
+\pointsinrightmargin
+\hpword{Marks:}
+\hsword{Your score:}
+\unframedsolutions
+\totalformat{\boxed{\textnormal{\totalpoints~\if\totalpoints1 mark\else marks\fi}}}
+\definecolor{SolutionColor}{rgb}{0,0,1}
+\renewcommand{\solutiontitle}{}
+\AtBeginEnvironment{solution}{\color{blue}}
+
+% %correct choices in solution
+\CorrectChoiceEmphasis{\rm}
+\checkedchar{\tikz\draw[blue,fill=blue] (0,0) circle (1ex);}
+
+% %
+\newcommand{\mblue}[1]{\color{blue}\textit{#1}\color{black}}
+
+% % increase distance between checkbox items
+\renewcommand{\checkboxeshook}{\setlength{\itemsep}{6pt}}
+
+%% distance between questions and parts
+\renewcommand{\questionshook}{\setlength{\parsep}{10pt}}
+\renewcommand{\partshook}{\setlength{\parsep}{15pt}}
+
+%% define arrows in text
+\newcommand{\arrow}{$\rightarrow$\xspace}
+\newcommand{\Arrow}{$\Rightarrow$\xspace}
+
+% % math notation:
+%\veccol{1}{2}{3}
+\newcommand{\veccol}[3]{
+    \begin{bmatrix}
+        #1\\
+        #2\\
+        #3\\
+    \end{bmatrix}}
+  
+%\vecrow{1}{2}{3}
+\newcommand{\vecrow}[3]{\left[#1~#2~#3\right]}
+
+%\matrixTwo{1}{2}{3}{4}
+\newcommand{\matrixTwo}[4]{\left[\begin{array}{cc}#1&#2\\#3&#4\end{array}\right]}
+
+% \matrixThree{1}{2}{3}{4}{5}{6}{7}{8}{9}
+\newcommand{\matrixThree}[9]{\left[\begin{array}{ccc}#1&#2&#3\\#4&#5&#6\\#7&#8&#9\end{array}\right]}
+
+%\matrixCorner{1}{2}{3}{4}
+\newcommand{\matrixCorner}[4]{\left[\begin{array}{ccc}#1& \cdots&#2\\ \vdots & \ddots & \vdots\\#3&
+      \cdots&#4\end{array}\right]}
+      
+% real numbers
+\newcommand{\R}{\mathbb{R}}
+
+% \nR
+\newcommand{\nR}{{}^{n}\mathbb{R}}
+% \mR
+\newcommand{\mR}{{}^{m}\mathbb{R}}
+% \Rn
+\newcommand{\Rn}{\mathbb{R}^{n}}
+% \nRn
+\newcommand{\nRn}{{}^{n}\mathbb{R}^{n}}
+% \nRm
+\newcommand{\nRm}{{}^{n}\mathbb{R}^{m}}
+% \nRm
+\newcommand{\mRn}{{}^{m}\mathbb{R}^{n}}
+% \mRm
+\newcommand{\mRm}{{}^{m}\mathbb{R}^{m}}                              
+       
+%% define abbreviations
+\newcommand{\row}{\operatorname{row}\,}
+\newcommand{\col}{\operatorname{col}\,}
+\renewcommand{\dim}{\operatorname{dim}\,}
+\renewcommand{\span}{\operatorname{span}\,}
+\newcommand{\rank}{\operatorname{rank}\,}
+\renewcommand{\ker}{\operatorname{ker}\,}
+\newcommand{\nul}{\operatorname{null}\,}
+\renewcommand{\det}{\operatorname{det}\,}
+\newcommand{\adj}{\operatorname{adj}\,}
+
+%%% This command makes a framed box of a chosen height.
+\newcommand{\makenonemptybox}[2]{%
+\par\nobreak\vspace{\ht\strutbox}\noindent
+\setlength{\fboxrule}{0pt} % set this to 0pt to make invisible
+\fbox{%
+\parbox[c][#1][t]{\dimexpr\linewidth-2\fboxsep}{
+  \hrule width \hsize height 0pt
+  \vspace{-0.6cm}
+  \color{SolutionColor}#2\color{black}
+ }%
+}%
+}
+
+  
+\begin{document}
+
+\vspace*{-0.5cm}
+\begin{center}
+  \large
+  \textbf{\Large \course~--~Linear Algebra}\\[0.1cm]
+  \textbf{\assignmenttitle}
+\end{center}
+\bigskip
+
+\textbf{\large Instructions:}\\
+\normalsize
+
+Please read the {\bf MAT185 Assignment Policies \& FAQ} document for
+details on submission policies, collaboration rules and academic integrity, and
+general instructions.
+
+\begin{enumerate}
+
+
+\item \textbf{Submissions are only accepted by}
+  \href{https://www.gradescope.ca}{Gradescope}. Do not send anything by email.
+  Late submissions are not accepted under any circumstance. Remember you can
+  resubmit anytime before the deadline.
+
+\item \textbf{Submit solutions using only this template pdf}.  Your submission
+  should be a single pdf with your full written solutions for each question. If
+  your solution is not written using this template pdf (scanned print or
+  digital) then your submission will not be assessed. Organize your work neatly
+  in the space provided.  Do not submit rough work.
+
+\item \textbf{Show your work and justify your steps} on every question but do
+  not include extraneous information.  Put your final answer in the box
+  provided, if necessary.  We recommend you write draft solutions on separate
+  pages and afterwards write your polished solutions here on this template.
+
+\item \textbf{You must fill out and sign the academic integrity statement
+    below}; otherwise, you will receive zero for this assignment.
+
+\end{enumerate}
+
+\vspace{10pt}
+
+
+\textbf{\large Academic Integrity Statement:} \\
+
+%%% Student information
+
+% Student 1
+\fbox{
+  \begin{minipage}{\textwidth}
+    \vspace{0.75cm}
+    \makebox[\textwidth]{\large Full Name: \textbf{\color{SolutionColor} Pranav Upreti}\hrulefill}\\[0.75cm]
+    \makebox[\textwidth]{\large Student number:\enspace\hrulefill}\\
+  \end{minipage}
+}
+
+\vspace*{0.1in}
+
+% Student 2
+\fbox{
+  \begin{minipage}{\textwidth}
+    \vspace{0.75cm}
+    \makebox[\textwidth]{\large Full Name:\enspace\hrulefill}\\[0.75cm]
+    \makebox[\textwidth]{\large Student number:\enspace\hrulefill}\\
+  \end{minipage}
+}
+
+\bigskip
+\large \textbf{I confirm that:}
+\normalsize
+
+\begin{itemize} 
+\item I have read and followed the policies described in the document {\bf
+    MAT185 Assignment Policies \& FAQ}.
+\item In particular, I have read and understand the rules for
+  collaboration, and permitted resources on assignments as described in
+  subsection II of the the aforementioned document. I have not violated
+  these rules while completing and writing this assignment.
+\item I have not used generative AI in writing this assignment.
+\item I understand the consequences of violating the University's academic
+  integrity policies as outlined in the
+  \href{http://www.governingcouncil.utoronto.ca/policies/behaveac.htm}{Code of
+    Behaviour on Academic Matters}. I have not violated them while completing
+  and writing this assignment.
+\end{itemize}
+\bigskip
+
+\large \textbf{By submitting this assignment to Gradescope, I agree that the
+  statements above are true.}  \normalsize
+
+\newpage
+
+\section*{Preamble:}
+
+Image processing is the manipulation of digital images by applying mathematical tools and
+algorithms. A wide range of applications based on digital image processing are, for example, medical
+imaging, image optimization in consumer cameras, computer vision, and satellite imagery. Linear
+algebra, and the techniques you will learn during this course, plays a crucial role in that field by
+providing a mathematical foundation.\\
+
+A typical digital image can be considered as a 2-dimensional matrix of \textit{pixels} (abbreviation
+for \textit{picture element}). Methods of digital image processing are manipulating this
+2D-matrix. A pixel is the smallest element of a digitally acquired raster image, and can be
+considered as a colour sample at each point of an image. Typically, each pixel is represented by 3
+positive integer values from 0 to 255 for each colour red, green, and blue: 0 is representing black
+and 255 ($= 2^8-1$) either red, green, or blue. In that case, 24 Bits are used to code 16,777,216
+distinct colours for each pixel. This is called a 24\,bpp (24\,Bits-per-pixel) colour depth. If a
+grey-scale image is sampled, each pixel samples the light intensity. In that case, only 8\,Bits
+(single integers from 0 to 255) are typically necessary, as shown in \cref{fig:imagematrix}, to
+store grey-scale images.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imagematrix.pdf}
+  \caption{Grey-scale image represented by 8 bpp
+    (Bits-per-pixel). [\textit{source: stanford.edu}]}
+  \label{fig:imagematrix}
+\end{figure}
+
+One application of linear algebra in the context of digital image processing is for a linear
+transformation of the images / 2D-matrices. We will discuss linear transformations in more detail
+later this term. Common transformations include scaling, rotation, and translation of the image. All
+of these linear transformations can be represented by a matrix
+multiplication.\\
+
+Another important application of linear algebra in the context of digital image processing is
+filtering, which will be explored in Question~\ref{q:filtering} of this assignment. Filtering
+includes, for example, methods for noise reduction, blurring/sharpening, edge
+detection, white balancing, colour correction, and many more.\\
+
+Lastly, images have to be stored in efficient ways. For a colour image of size $n\times m$ with a
+24\,bpp colour depth, $m \times n \times 24$\,Bits of memory are necessary. An image of
+$8000\times 6000$ Pixels (4:3 aspect ratio and 48MP resolution of modern smartphone cameras) with
+24\,Bit colour depth will lead to an uncompressed image filesize of 144\,MB. To reduce the image
+filesize, lossy (permanently removing \textit{unnecessary} information of the original image) and
+lossless compression methods are applied. For lossy compression algorithms, it is vital to identify
+unnecessary information of the image, which are not perceived by the viewer and can be removed. One
+approach for a lossy compression is based on the Singular Value Decomposition (SVD), which will be
+explored in more detail in Question~\ref{q:sdv}.
+
+\newpage
+
+\begin{questions}
+  \question\label{q:filtering} For simplicity, we assume that each
+    pixel of a grey-scale image is considered as a real value in
+    Question~\ref{q:filtering}(\ref{part:first}) to (\ref{part:second_last}).
+  Let $G \in \nRm$ be a grey-scale image of $n \times m$ pixels. A collection of
+  image filters $ F_1, F_2, \dots, F_k \in \nRm$ can be used to process this
+  image, resulting in filtered images $A_l$ represented as:
+  \begin{equation}
+    \label{eq:filter}
+    A_l = F_l \circ G, \quad l = 1, 2, \dots, k,
+  \end{equation}
+  where $ \circ $ denotes the entry-wise product. The entry-wise product (also called
+  \textit{Hadamard} product) of two matrices of the same size is defined as the product, where each
+  entry of the resulting matrix is the product of the corresponding entries of the original
+  matrices. For example, if $P = \matrixTwo{p_{11}}{p_{12}}{p_{21}}{p_{22}}$ and
+  $Q= \matrixTwo{q_{11}}{q_{12}}{q_{21}}{q_{22}}$ are $2\times 2$ matrices, the Hadamard product is
+  defined as
+  \begin{equation}
+  P\circ Q = \matrixTwo{p_{11}q_{11}}{p_{12}q_{12}}{p_{21}q_{21}}{p_{22}q_{22}}.
+\end{equation}
+        
+  \begin{parts}
+
+    \part\label{part:first} Can the filter $F_1$ in \cref{eq:filter} be used to blur or smooth an image
+      $A_1$? Unsupported answers will not receive full credit.
+
+      %%% Do not change the height of this box. Your work must fit inside it.
+      \makenonemptybox{3cm}{
+        Yes. To smoothen or blur an image, neighboring pixels to some target pixel should be similar in value, the value representing light intensity. A filter $F_1$ can adjust this light intensity value of every entry in $A_1$ to provide the desired effect. 
+
+        To illustrate this, if you set $F_1=\mathbf{0}$ then $F_1 \circ A_1 = \mathbf{0}$, so the entire image appears black, or completely smoothened out.
+      }
+         
+    \part Name at least \textbf{three} applications in the context of digital
+    image processing for a filter as defined in \cref{eq:filter}. Additionally,
+    give details how $F_i$ would look like for your applications.
+
+    %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{10cm}{
+      %%% Your work goes here!      
+      \begin{enumerate}
+        \item Blacking out parts of an image (i.e. faces) \\
+        Every entry in $F_i$ should be 1, except for the entries corresponding to the pixels that make up someone's face. Those entries should be $0$ to create the black-out effect around a face.
+        \item "Flipping" an image \\
+        To flip an image, $F_i$ needs to retain some information about $G$. Specifically, for a flip across the center horizontal line of an image of dimensions $n\times k$ represented by the matrix $G$, set $f_{x,y} = g_{x,(k-y)}/g_{x,y}$, where $f_{x,y}$ and $g_{x,y}$ are the entries $x^\text{th}$ row and $y^\text{th}$ in $F_i$ and $G$ respectively. In essence, $F_i\circ G$ divides the $(x,y)$ entry in $G$ with itself, and multiplies by the entry on the other side of the image.
+        \item Vignette effect \\
+        In a vignette effect, pixels towards the edges of an image are darkened. To achieve this, multiply all entries towards the edges in matrix $G$ by some number $<1$ to decrease the light intensity of the pixel. Construct $F_i$ so that all its entries $f_\text{x,y} \leq 1$, with values smaller than 1 at the "edge" entries of $F_i$, with values gradually increasing towards 1 at the center entry of $F_i$ (i.e. $f_{(n/2),(k/2)}$ for an $n\times k$ matrix $G$.)
+      \end{enumerate}
+      
+      
+      %%% end of your answer    
+    }
+
+     
+\newpage
+    
+\part \label{part:linind} Assume that the entries of the image $G$ are all nonzero.  Prove that the
+  set of filtered images $\{F_1\circ G, F_2\circ G, \dots, F_k\circ G\}$ is linearly independent if
+  and only if the set of filters $\{F_1, F_2, \dots, F_k\}$ is linearly independent.
+
+
+  %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{17cm}{
+      First consider if $\{F_1, F_2, ..., F_k\}$ is linearly independent then $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$ is linearly independent. From the definition of linear independence:
+      $$\sum_{i+1}^{k}\lambda_i F_i = \mathbf{0}, \lambda_i\in\R$$ only has one solution, all $\lambda_i = 0$. Now consider each entry in the matrix $F_i$. Since $\lambda_i F_i = \mathbf{0}$ it follows that any entry in the $x$\textsuperscript{th} row and $y$\textsuperscript{th} column in $F_i$, call it $f^i_{x,y}$, must be $0$, so $\lambda_i f^i_{x,y} = 0$.
+
+      We now consider the set $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$.  If this set is linearly independent, then 
+
+      $$\sum_{i+1}^{k}\gamma_i F_i\circ G = \mathbf{0}, \gamma_i\in\R$$
+
+      Once again, we consider the value of the $x,y$th entry in the matrix $F_i \circ G$. Since we constrain $F_i\circ G = \mathbf{0}$ to test for linear independence, by the definition of the Hadamard product, the $x,y$th entry of that matrix is simply $\gamma_i g_{x,y}f^i_{x,y}=0$.
+
+      Performing algebraic manipulations:
+
+      \begin{equation*}
+        \begin{aligned}
+        \gamma_i g_{x,y} f^i_{x,y} & = 0 \\
+        \gamma_i f^i_{x,y} & = 0 
+        \end{aligned}
+      \end{equation*}
+      Note we can divide through by $g_{x,y}$ since all entries in $G$ are nonzero.
+       % this might be a problem in the proof
+
+      But we showed earlier that for $\lambda_i f^i_{x,y} = 0$, $\lambda_i = 0$ was the only solution to $\sum_{i=1}^{k} \lambda_i F_i = 0$. It follows that if we set $\gamma_i=\lambda_i$ (they both are, after all some constant value), then $\gamma_i=0$, as required for linear independence. It follows from this that the set $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$ is linearly independent if the set $\{F_1, F_2, ..., F_k\}$ is linearly independent. 
+
+      Next, we show that if $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$ is linearly independent, then  $\{F_1, F_2, ..., F_k\}$ is linearly independent. By definition of linear independence, 
+
+      $$\sum_{i+1}^{k}\phi_i F_i\circ G = \mathbf{0}, \phi_i\in\R$$
+      
+      so every $x,y$th entry in $\phi_i F_i\circ G$ equals 0 i.e. $\phi_i g_{x,y}f^i_{x,y}=0$. Next we consider the set $\{F_1, F_2, ..., F_k\}$. This set is linearly independent if 
+
+      $$\sum_{i+1}^{k}\theta_i F_i = \mathbf{0}, \theta_i\in\R$$
+
+      so every $x,y$th entry in $\theta_i F_i$ equals. But we know that:
+      \begin{equation*}
+        \begin{aligned}
+        \phi_i g_{x,y} f^i_{x,y} & = 0 \\
+        \phi_i f^i_{x,y} & = 0 
+        \end{aligned}
+      \end{equation*}
+      Dividing through by $g_{x,y}$ will not change the solution set, as learned in ESC103, so $\phi_i=0$ is still the sole solution to that equation. If we let $\theta_i=\phi_i$ we get that $\theta_i=0$ is the only solution to that equation so it follows that any $\theta_i$ in the equation:
+
+      $$\sum_{i+1}^{k}\theta_i F_i = \mathbf{0}, \theta_i\in\R$$
+      
+      must equal 0, satisfying linear independence. Hence, if $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$ is linearly independent, then $\{F_1, F_2, ..., F_k\}$ is also linearly independent.
+      
+      We conclude that $\{F_1, F_2, ..., F_k\}$ is linearly independent if and only if $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$ is linearly independent.
+    }
+
+   \newpage
+    
+  \part Assume that the entries of the image $G$ are all nonzero.  Let $\mathcal{W}$ be the set of
+    the filtered images $\{F_1 \circ G, F_2 \circ G, \dots, F_k \circ G\}$. Suppose a new image
+    filter $ F_{k+1} $ is introduced. Prove that the filtered image $ F_{k+1} \circ G $ lies in
+    $\operatorname{span} \mathcal{W}$ if and only if $ F_{k+1} $ is a linear combination of
+    $ \{F_1, F_2, \dots, F_k\} $.
+
+    %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{17cm}{
+    }
+
+    \newpage
+    
+    \part \label{part:second_last} Assume $ F_1 = \matrixTwo{1}{0}{0}{1} $,
+    $ F_2 = \matrixTwo{0}{1}{1}{0} $, and $ F_3 = \matrixTwo{1}{1}{0}{0} $ are
+    filters for a grey-scale image $G \in {}^2\mathbb{R}^2$. Verify whether the
+    filters $ F_1, F_2, F_3 $ are linearly independent, and determine whether
+    $ F_4 = \matrixTwo{2}{1}{1}{4} $ lies in the span of $ \{F_1, F_2, F_3\} $.
+
+    %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{14cm}{
+      By the definition of linear independence, $\{F_1, F_2, F_3\}$ are linearly independent if
+      $$c_1F_1 + c_2F_2 + c_3F_3 = \mathbf{0}$$ for some $c_1,c_2,c_3\in\R$ and $c_1=c_2=c_3=0$. 
+
+      Taking the sum of $c_1F_1 + c_2F_2 + c_3F_3 = \mathbf{0}$ shows that:
+
+      \begin{equation*}
+    \begin{aligned}
+        c_1 &\matrixTwo{1}{0}{0}{1} + c_2 \matrixTwo{0}{1}{1}{0} + c_3 \matrixTwo{1}{1}{0}{0} &= \matrixTwo{0}{0}{0}{0} \\
+        &\matrixTwo{c_1}{0}{0}{c_1} + \matrixTwo{0}{c_2}{c_2}{0} + \matrixTwo{c_3}{c_3}{0}{0} &= \matrixTwo{0}{0}{0}{0} \\
+        &\matrixTwo{c_1 + c_3}{c_2 + c_3}{c_2}{c_1} &= \matrixTwo{0}{0}{0}{0} \\
+        \implies c_2 &= c_1 = 0 \text{ so } c_3=0
+    \end{aligned}
+\end{equation*}
+
+      Since $c_1=c_2=c_3=0$ the set $\{F_1, F_2, F_3\}$ is linearly independent. \\
+
+      Next, consider the matrix $F_4 = \matrixTwo{2}{1}{1}{4}$. We know some scalar combination of $\{F_1, F_2, F_3\}$ yields $\matrixTwo{c_1+c_3}{c_2+c_3}{c_2}{c_1}$, $c_1,c_2,c_3\in\R$. Solve for $c_1,c_2,c_3$ using the matrix entries. We get that $c_1=4$ and $c_2 = 1$ directly. This means $c_1+c_3=2 \implies c_3 = -2$ and that $c_2+c_3 = 1 \implies c_3 = 0$ Since $2\neq 0$, the matrix $\matrixTwo{2}{1}{1}{4}$ cannot be expressed as a linear combination of $F_1, F_2$ and $F_3$. Hence, $\matrixTwo{2}{1}{1}{4}$ is outside the span of $\{F_1,F_2,F_3\}$
+    }
+     
+  \part For saving grey-scale images $A$ of size $n\times m$ pixels in an efficient way, each pixel
+    is stored as an 8\,Bit integer, where 0 represents black and 255 represents white (see
+    preamble). Let $\mathcal{V}$ be the set of these grey-scale images. Is $\mathcal{V}$ a vector
+    space if one uses entry-wise vector addition and scalar multiplication?
+
+    %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{3cm}{
+      $\mathcal{V}$ is not a vector space. It fails under closure over vector addition. \\
+      
+      For instance, consider two $n\times m$ matrices, $A,B\in\mathcal{V}$ for some indices $i,j$, $1\leq 1 \leq n$ and $1 \leq j \leq m$. Consider the $i$\textsuperscript{th} row and $j$\textsuperscript{th} column entry in $A$ and $B$ - call it $a_{i,j}$ and $b_{i,j}$ respectively. If $a_{i,j} = 255$ and $b_{i,j} = 255$ then when you compute the $i,j$th entry of $A+B$ to be $a_{i,j} + b_{i,j} = 510$ which cannot be stored as an 8 bit integer so it is not in $\mathcal{V}$. Hence, $\mathcal{V}$ is not a vector space.
+      %%% Your work goes here!      
+      
+      
+      %%% end of your answer    
+    }
+  \end{parts}
+
+
+\newpage
+
+\question \label{q:sdv} Let $A \in \mRn$ be a grey-scale image of size $m \times n$, where each
+  entry is representing a grey pixel. As you learnt in ESC103, the rank of an $n\times m$ matrix is
+  the number of linear independent rows, which is the same as the number of the linear independent
+  columns.
+
+  The Singular Value Decomposition\footnote{In this writing assignment, we are introducing you to
+    the compact (or reduced) SVD, which is slightly different from the full SVD. To save space, we
+    refer to it as the ``SVD'' throughout.} of a matrix $A$ is a way of writing $A$ as the product of three
+  matrices:
+\begin{equation}
+  \label{eq:1}
+  A=U \Sigma V^T
+\end{equation}
+with the
+matrices $U$, $\Sigma$, and $V^T$ defined as 
+
+\begin{equation}
+  \begin{aligned}
+    & A=\left[\begin{array}{lllll}
+                \mathbf{u}_{\mathbf{1}} & \mathbf{u}_{\mathbf{2}} & \cdots & \mathbf{u}_{\mathbf{n}-\mathbf{1}} & \mathbf{u}_{\mathbf{r}}
+              \end{array}\right]\left[\begin{array}{lllll}
+                                        \sigma_1 & & \cdots& & 0\\
+                                                 & \sigma_2 & & & \\
+                                                 \vdots& & \ddots & & \vdots\\
+                                                 & & & \sigma_{r-1} & \\
+                                                 0& & \cdots& & \sigma_r
+                                      \end{array}\right]\left[\begin{array}{c}
+                                                                \mathbf{v}_{\mathbf{1}}^T \\
+                                                                \mathbf{v}_{\mathbf{2}}{ }^T \\
+                                                                \vdots \\
+                                                                \mathbf{v}_{\mathbf{r-1}}{ }^T \\
+                                                                \mathbf{v}_{\mathbf{r}}{ }^T
+                                                              \end{array}\right]
+  \end{aligned}
+  \label{eq:sdv_1}
+\end{equation}
+
+where $\mathbf{u}_i$ are the columns of $U$ and $\mathbf{v}^T_i$ are the rows of $V^T$. The matrix
+$\Sigma$ is a diagonal matrix with the entries $\sigma_i$ on the diagonal (the diagonal entries of
+$\Sigma$ are nonnegative and all other entries of $\Sigma$ are zero). Because $\Sigma$ is diagonal,
+\cref{eq:sdv_1} can be written as:
+
+    \begin{equation}
+      \label{eq:sumA}
+      A=\mathbf{u}_{\mathbf{1}} \sigma_1 \mathbf{v}_{\mathbf{1}}{
+      }^T+\mathbf{u}_{\mathbf{2}} \sigma_2 \mathbf{v}_{\mathbf{2}}{
+      }^T+\cdots+\mathbf{u}_{\mathbf{r}-\mathbf{1}} \sigma_{r-1}
+      \mathbf{v}_{\mathbf{r}-\mathbf{1}}{ }^T+\mathbf{u}_{\mathbf{r}} \sigma_r
+      \mathbf{v}_{\mathbf{r}}{ }^T.
+    \end{equation}
+    
+    
+    As you can see, $A$ is separated into the sum of (rank=1) matrices of the
+    form $\sigma_i \mathbf{u}_{\mathbf{i}}\mathbf{v}_{\mathbf{i}}{ }^T$. With
+    that, the sum in \cref{eq:sumA} can be expressed as
+    \begin{equation}
+      \label{eq:2}
+      A=\sum_{i=1}^r \sigma_i \mathbf{u}_{\mathbf{i}} \mathbf{v}_{\mathbf{i}}^T
+    \end{equation}
+    with $r$ so called singular values
+    $\left\{\sigma_i \in \mathbb{R}~|~\sigma_i > 0\right\}$ and
+    both $\{ \mathbf{u}_1, \dots \mathbf{u}_r \} \subseteq \mR$ and 
+    $\{ \mathbf{v}_1, \dots \mathbf{v}_r \} \subseteq \nR$ are orthonormal sets of vectors.
+    
+    What's an ``orthonormal set of vectors''?  In simple language, each vector has length one and
+    any two vectors are perpendicular (also called ``orthogonal'').  More specifically, two vectors,
+    $\mathbf{x}, \mathbf{y} \in \nR$, are called \mblue{orthogonal}\ if and only if their
+    dot-product is equal to zero: $\mathbf{x} \cdot \mathbf{y} = \mathbf{x}^T\mathbf{y} = 0$.  The
+    set $\{\mathbf{x}_1,\mathbf{x}_2,\dots \mathbf{x}_k\} \subseteq \nR$ is an \mblue{orthogonal set
+      of vectors}\ if and only if every pair of vectors is orthogonal:
+    $\mathbf{x}_i \cdot \mathbf{x}_j = 0 $ if $i \neq j$.  The set
+    $\{\mathbf{x}_1,\mathbf{x}_2,\dots \mathbf{x}_k\} \subseteq \nR$ is an \mblue{orthonormal set of
+      vectors}\ if and only if every pair of vectors is orthogonal and each vector has length $1$:
+    $\mathbf{x}_i \cdot \mathbf{x}_j = 0 $ if $i \neq j$ and $\mathbf{x}_i \cdot \mathbf{x}_i = 1$
+    for every $1 \leq i, j \leq k$.
+      
+    At the end of this course, you will have the tools you need to be able to find the SVD of a
+    general matrix.\footnote{\textit{For the curious:} $\mathbf{u}_i$ are eigenvectors of the matrix
+      $AA^T$ and $\mathbf{v}_i$ are eigenvectors of the matrix $A^TA$.}  We can use \cref{eq:sumA}
+    to compress the image $A$ by keeping the ``most relevant'' terms in the sum: As you can see from
+    \cref{eq:sumA}, some matrices $\sigma_i \mathbf{u}_{\mathbf{i}} \mathbf{v}_{\mathbf{i}}^T$ could
+    be neglected if $\sigma_i$ is very small. Therefore, a typical strategy for compressing images
+    is putting the singular values $\sigma_i$ in nonincreasing order,
+    $\sigma_1 \geq \sigma_2 \geq \dots \sigma_r > 0$ (as well as sorting the corresponding
+    $\mathbf{u}_i$ and $\mathbf{v}_i$ in $U$ and $V$, respectively) and only storing $k < r$ of
+    these components in an image file ($k$ is an integer of at least 1). The compressed image $A_k$
+    is constructed as
+  \begin{equation}
+    \label{eq:3}
+    A_k=\sum_{i=1}^k \sigma_i \mathbf{u}_{\mathbf{i}} \mathbf{v}_{\mathbf{i}}^T
+  \end{equation}
+  
+  This will reduce the image size dramatically, however, the image quality will
+  be degraded if $k$ was picked too small, see for example
+  \cref{fig:svd} where 30 components were used ($k = 30$) for the compression of
+  the initial grey-scale image. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{svd}
+    \caption{Lossy compression of a $700\times 700$ pixel grey-scale image via
+      Single Value Decomposition (SVD).}
+    \label{fig:svd}
+  \end{figure}
+  
+  \begin{parts}
+
+    \part For what values of $k$ would $A_k$ corresponds to a lossy
+      compressed image? No additional explanation is necessary.
+
+      %%% Do not change the height of this box. Your work must fit inside it.
+      \makenonemptybox{0.5cm}{
+        Any $k\in\mathbb{N}$ smaller than the rank of the diagonal matrix $\sum$.
+      }
+     
+    \part Let $A= \sigma\mathbf{x}\mathbf{y}^T$ where
+      $\mathbf{x},\mathbf{y} \in {}^n\mathbb{R}$ and $\sigma \in \R$ is nonzero. Prove that
+      $\operatorname{rank}(A)=1$. \color{red}\textit{Hint:~}\color{black}
+    Try constructing a $3 \times 3$ example, $A$, by choosing some
+    nonzero $\sigma\in\mathbb{R}$ and
+      $\mathbf{x}, \mathbf{y} \in {}^3\mathbb{R}$. This should give you the insight you 
+      need to answer this question for
+      general $\mathbf{x},\mathbf{y} \in {}^n\mathbb{R}$ below.
+
+      %%% Do not change the height of this box. Your work must fit inside it.
+      \makenonemptybox{9cm}{
+        %%% Your work goes here!      
+      
+      
+        %%% end of your answer    
+      }
+
+\newpage
+
+\part Let
+$A = \begin{bmatrix} 36 & 9 & 12 \\ -48 & -12 & -16 \\ 144 & 36 &
+  48 \end{bmatrix}$. Determine the singular value decomposition
+$A = \sigma {\bf x} {\bf y}^T$.
+
+      %%% Do not change the height of this box. Your work must fit inside it.
+      \makenonemptybox{3cm}{
+        %%% Your work goes here!      
+      
+      
+        %%% end of your answer    
+      }
+
+    
+        
+    \part\label{part:ortho} Assume  $\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\}$ is an
+      orthogonal set of nonzero vectors.  Prove that the set is linearly
+      independent. \label{part:orthogonal}
+
+      %%% Do not change the height of this box. Your work must fit inside it.
+      \makenonemptybox{10cm}{
+        %%% Your work goes here!      
+      
+      
+        %%% end of your answer    
+      }
+      
+        
+    \part Consider the set $\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3 \}$ from
+      part~(\ref{part:ortho}).
+    What property of a 4th vector $\mathbf{v}_4 \in\ ^4\R$ 
+       would ensure that the extended set
+      $\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3, \mathbf{v}_4 \}$ spans
+      ${}^4\mathbb{R}$? Give a short explanation.  Note: your explanation does not
+      have to include how you would find such a $\mathbf{v}_4$.
+
+      %%% Do not change the height of this box. Your work must fit inside it.
+      \makenonemptybox{3cm}{
+
+      We showed in class that a set spanning ${}^4\mathbb{R}$ contains $m$ linear independent vectors. Thus, a set spanning ${}^4\R$ contains 4 linearly independent vectors. So, we need to add an element $\mathbf{v}_4$ to $\{\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3\}$ such that $\mathbf{v}_4 \notin \span\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3\}$, i.e. the set $\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3, \mathbf{v}_4\}$ is linearly independent.  
+        %%% Your work goes here!      
+      
+      
+        %%% end of your answer    
+      }
+
+
+
+\newpage    
+    
+    \part Download the Jupyter notebook (see Quercus page of \textit{Assignment
+      2}), which includes the python code of an SVD analysis.  Please also
+    download the three example grey-scale images \textit{image1.png},
+    \textit{image2.png}, and \textit{image3.png} from the same Quercus page.
+    You can run the code on the
+    \href{https://jupyter.utoronto.ca/hub/user-redirect/tree}{U\,of\,T Jupyter
+      server}, on your own local Jupyter installation, or on the
+    \href{https://undergrad.engineering.utoronto.ca/campus-facilities/engineering-computing-facility-ecf/remote-access/}{ECF
+      lab PCs}. We recommend using the U\,of\,T Jupyter server, since all
+    necessary packages are already installed:
+    \href{https://jupyter.utoronto.ca/hub/user-redirect/tree}{https://jupyter.utoronto.ca/hub/user-redirect/tree}. For
+    that, please login with your U\,of\,T credentials and click
+    '\textit{upload}' to upload the IPYNB file and images. After that, you can
+    open the uploaded notebook and run the Python code.
+    
+    Use the Jupyter Python code to analyze the provided three images. Plot the
+    sorted singular values $\sigma_i$ over the index $i$ in one graph and
+    discuss the results for all three provided images. Do you see a pattern of
+    the result depending on each input image? 
+    
+    Insert your plot below.  In addition, briefly discuss which of the 3 images
+    would allow for the highest and which for the lowest compression ratio by
+    singular value
+    decomposition. \textcolor{red}{\textit{Hint:}}\color{black}~The compression
+    ratio is the uncompressed file size over the compressed file size. You don't
+    need to calculate this ratio. However, think about which image would need
+    the largest $k$ and which the lowest $k$ in \cref{eq:3} for an accurate
+    representation of the uncompressed image, \cref{eq:2}.  For plotting
+    $\sigma_i$, see the comments and plotting commands in the Jupyter
+    file. Also, keep the logarithmic Y-axis for your graph.
+
+    %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{9cm}{
+      %%% Add your graph and explanations here!      
+      
+      %%% end of your answer    
+    }
+    
+    
+    \part Calculate the SVD of \textit{image1.png} with the given Jupyter code.
+    For what choice of $k \in \mathbb{Z}$ would you expect a reduction in file
+    size? To answer this question, estimate the memory needed to store the
+    SVD-compressed image and compare it to the memory needed for the
+    uncompressed 8\,bpp version of the image. \color{red}\textit{Hint:}
+    \color{black} Estimate the memory size of the uncompressed image by using
+    its size and given colour depth. Also note that each floating-point number
+    uses 32\,Bit memory when stored.
+
+    %%% Do not change the height of this box. Your work must fit inside it.
+    \makenonemptybox{2.5cm}{
+      %%% Your work goes here!      
+      
+      %%% end of your answer    
+    }
+    
+  \end{parts}
+  
+\end{questions}
+
+\end{document}

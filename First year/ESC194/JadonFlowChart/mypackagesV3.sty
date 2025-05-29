@@ -1,0 +1,32 @@
+\ProvidesPackage{mypackagesv3a}
+\usepackage{graphicx} % Insert images
+\usepackage{amsmath} % Math styles
+\usepackage{amsfonts}
+\usepackage{mathtools}
+% \usepackage{cmbright} \usepackage[OT1]{fontenc} % Jadon doesn't like nice fonts :(
+\usepackage{nicefrac, xfrac} % diagonal fractions
+\usepackage{hyperref}
+\usepackage[thinc]{esdiff} % better derivatives!
+\usepackage{nicefrac}
+\usepackage{titlesec}
+\usepackage{float} % intuitive figure placement using H option
+\usepackage{stanli} % for structural analysis
+\usepackage{caption} % reformat how captions are shown
+\usepackage{hyperref} % hyperlinked references
+\usepackage{cleveref} % write out the word before reference
+
+% crf is for mid-sentence reference. Crf is beginning of sentence reference. Only keeping cref for now 
+\crefname{table}{Table}{tables}
+\crefname{figure}{Figure}{figures}
+\crefname{equation}{Equation}{equations}
+
+%\titlespacing{\section}{0pt}{\parskip}{\parskip}
+%\titlespacing{\subsection}{0pt}{\parskip}{\parskip}
+%\titlespacing{\subsubsection}{0pt}{\parskip}{\parskip}
+\everymath{\displaystyle} % Large math font
+% For circled enumerates
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand\mybar{\kern1pt\rule[-\dp\strutbox]{.8pt}{\baselineskip}\kern1pt}
+
+

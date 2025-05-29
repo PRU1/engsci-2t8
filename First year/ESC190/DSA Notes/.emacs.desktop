@@ -1,0 +1,58 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Mar 24 15:34:33 2025
+;; Desktop file format version 208
+;; Emacs version 28.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (26593 46025 414220 0) (desktop . "208") "Pranav@Dell" nil nil ((((minibuffer . t) (undecorated) (skip-taskbar) (font . "-outline-Consolas-normal-normal-normal-mono-33-*-*-*-c-*-iso8859-1") (border-width . 0) (internal-border-width . 0) (child-frame-border-width) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#2e3436") (background-color . "#eeeeec") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-focus-on-map) (no-accept-focus) (no-special-glyphs) (alpha) (menu-bar-lines . 1) (tab-bar-lines . 0) (height . 50) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 43) (scroll-bar-height . 43) (fullscreen) (z-group) (visibility . t) (display-type . color) (background-mode . light) (cursor-color . "#ff8f00") (environment) (tabs (current-tab (name . "main.tex") (explicit-name))) (last-focus-update . t) (frameset--id . "F174-CA98-E130-B799") (frameset--mini t . t) (frameset--text-pixel-width . 1530) (frameset--text-pixel-height . 1900) (width . 85) (modeline . t) (unsplittable) (left . 123) (top . 53) (icon-name) (display . "w32") (explicit-name) (tool-bar-position . top)) ((min-height . 8) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 304) (min-pixel-width . 180) (min-pixel-height-ignore . 152) (min-pixel-width-ignore . 142) (min-pixel-height-safe . 76) (min-pixel-width-safe . 36)) vc (pixel-width . 1546) (pixel-height . 1862) (total-width . 86) (total-height . 49) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1546) (pixel-height . 931) (total-width . 86) (total-height . 24) (normal-height . 0.5) (normal-width . 1.0) (buffer "main.tex" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 5) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1578) (start . 1195)) (prev-buffers ("*Custom Themes*" 349 1081) ("main.tex" 1195 1697) ("*scratch*" 1 1))) (leaf (last . t) (pixel-width . 1546) (pixel-height . 931) (total-width . 86) (total-height . 25) (normal-height . 0.5) (normal-width . 1.0) (buffer "*~/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/main output*" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins 5) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 17098) (start . 16358)) (prev-buffers ("*TeX Help*" 1 1)))))])
+(setq comint-input-ring nil)
+(setq compile-history nil)
+(setq desktop-missing-file-warning nil)
+(setq dired-regexp-history nil)
+(setq extended-command-history '("atom-one-dark-theme-change-faces-for-mode" "toggle-word-wrap" "elcord-mode" "set-background-color" "immortal-scratch-mode" "evil-ace-jump-char-to-mode" "customize-themes" "package-install" "latex-mode" "save-buffer" "customize-face" "make-frame" "desktop-read" "menu-bar-mode" "package-list-packages" "comment-line" "query-replace" "org-latex-convert-region-to-latex" "su-evil-ace-jump-line-mode" "frame-configuration-to-register" "kill-this-buffer" "toggle-read-only" "revert-buffer" "helm-fuzzy-find" "su-file-read-only" "replace-string" "command-log-mode"))
+(setq face-name-history '("hl-line"))
+(setq file-name-history '("~/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/main.tex" "~/.emacs.d/custom.el" "~/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/main.log" "~/Documents/backup/First year/ESC190/DSA Notes/main.tex" "~/Documents/backup/ML Projects/Notes/Backpropogation/sections/vanilla_NN.tex" "~/.emacs.d/custom.el" "~/Documents/LaTeX/business-unit3Summative/source.tex" "~/Documents/LaTeX/business-unit3Summative/<none>.tex" "~/Documents/LaTeX/business-unit3Summative/main.tex" "~/Documents/LaTeX/Molar/source.tex" "~/.emacs.d/init.el" "~/Documents/LaTeX/PythagoreanTheoremProof/mypackagesV4.sty" "~/Documents/LaTeX/PythagoreanTheoremProof/source.tex" "~/Documents/LaTeX/PythagoreanTheoremProof/.source.tex.~undo-tree~" "~/Documents/LaTeX/Math IA/source.tex" "~/Documents/LaTeX/Math IA/mypackagesV4.sty" "c:/Program Files/Emacs/emacs-28.2/share/emacs/28.2/lisp/custom.el" "~/.emacs.d/snippets/latex-mode/resume.txt" "~/.emacs.d/snippets/latex-mode/todo.txt" "~/.emacs.d/snippets/latex-mode/label.txt" "~/.emacs.d/snippets/latex-mode/frame-item.txt" "~/Documents/LaTeX/Math IA/source.log" "~/documents/LaTeX/Math IA/source.tex" "~/documents/latex/Math IA/source.tex" "~/Documents/LaTeX/Math IA/.source.tex.~undo-tree~" "~/Documents/LaTeX/Business HL Notes/lessons/unit1.tex" "c:/Users/Pranav" "~/.emacs.d/lisp/init-misc.el" "~/.emacs.d/lisp/init-helm.el" "c:/Users/supreti/Teaching/CE 8610, AI in Chem Eng/slides/s1_intro.tex" "~/Teaching/CE 8610, AI in Chem Eng/slides/intro/slides.tex" "~/Teaching/CE 8610, AI in Chem Eng/slides/search/slides.tex" "~/Teaching/CE 8610, AI in Chem Eng/slides/s1-intro.tex" "~/texmf/tex/latex/my-beamer-highlights.sty" "~/texmf/tex/latex/my-highlights.sty" "~/texmf/tex/latex/my-equations.sty" "~/Teaching/CE 8610, AI in Chem Eng/slides/this.sty" "~/Teaching/CE 8610, AI in Chem Eng/slides/main.tex" "~/bin/my - Copy.ahk" "~/Research/Manuscripts/Actor-Critic Methods/paper.tex" "~/.emacs.d/lisp/init-tex.el"))
+(setq grep-find-history nil)
+(setq grep-history nil)
+(setq ivy-history nil)
+(setq minibuffer-history '("c:/Users/Pranav/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/" "c:/Users/Pranav/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/.tex" "c:/Users/Pranav/Documents/backup/First year/ESC190/DSA Notes/" "c:/Users/Pranav/Documents/backup/First year/ESC190/DSA Notes/.tex" "c:/Users/Pranav/Documents/backup/ML Projects/Notes/Backpropogation/sections/" "atom" "c:/Program Files/Emacs/" "c:/Users/Pranav/Documents/LaTeX/business-unit3Summative/.tex" "git" "c:/Users/Pranav/Documents/LaTeX/business-unit3Summative/" "github" "*Custom Themes*" "sourc" "*Warnings*" "c:/users/pranav/Documents/LaTeX/business-unit3Summative/.tex"))
+(setq org-refile-history nil)
+(setq org-tags-history nil)
+(setq query-replace-history '(" " "^M" "d" "v" "slides" "slide" "" "sty/"))
+(setq read-expression-history nil)
+(setq regexp-history nil)
+(setq regexp-search-ring '(#("y" 0 1 (isearch-case-fold-search nil)) #("x" 0 1 (isearch-case-fold-search nil)) #("\\\\hline" 0 7 (isearch-case-fold-search nil)) #("llh" 0 3 (isearch-case-fold-search nil)) #("modelling then" 0 14 (isearch-case-fold-search nil)) #("\\<\\\\\\>" 0 6 (isearch-case-fold-search nil)) #("\\\\cos\\\\theta" 0 12 (isearch-case-fold-search nil)) #("A" 0 1 (isearch-regexp-function nil isearch-case-fold-search nil)) #("\\\\Delta y" 0 9 (isearch-case-fold-search nil)) #("vspace" 0 6 (isearch-case-fold-search nil))))
+(setq register-alist nil)
+(setq search-ring '(#("fontec" 0 6 (isearch-regexp-function nil isearch-case-fold-search nil)) #("\\cos\\theta" 0 10 (isearch-case-fold-search nil isearch-regexp-function nil)) #("s " 0 2 (isearch-case-fold-search nil isearch-regexp-function nil)) #("vspace" 0 6 (isearch-case-fold-search nil isearch-regexp-function nil)) #("helm-bacnote" 0 8 (isearch-regexp-function nil isearch-case-fold-search nil) 8 12 (isearch-case-fold-search nil isearch-regexp-function nil)) #("helm-bac" 0 8 (isearch-case-fold-search nil isearch-regexp-function nil)) #("Cal" 0 3 (isearch-case-fold-search nil isearch-regexp-function nil)) #("vel" 0 3 (isearch-regexp-function nil isearch-case-fold-search nil)) #("Simul" 0 5 (isearch-case-fold-search nil isearch-regexp-function nil))))
+(setq shell-command-history '("dos2unix"))
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "c:/Users/Pranav/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/main.tex"
+  "main.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode override-global-mode helm-mode yas-minor-mode auto-complete-mode evil-owl-mode TeX-PDF-mode smartparens-mode guide-key-mode rainbow-delimiters-mode comment-tags-mode outline-minor-mode undo-tree-mode linum-mode linum-relative-mode immortal-scratch-mode auto-compile-on-load-mode reftex-mode cdlatex-mode)
+  1578
+  '(1578 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (indent-tabs-mode) (buffer-display-time 26593 46023 9903 0) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (TeX-master . t))
+  '((mark-ring (1702 1697 51 50 1))))
+
+(desktop-create-buffer 208
+  "c:/Users/Pranav/Documents/backup/engsci-2t8/First year/ESC190/DSA Notes/main.log"
+  "main.log"
+  'fundamental-mode
+  '(abbrev-mode override-global-mode helm-mode yas-minor-mode evil-owl-mode TeX-PDF-mode guide-key-mode undo-tree-mode linum-mode linum-relative-mode immortal-scratch-mode auto-compile-on-load-mode)
+  34655
+  '(nil nil)
+  t
+  nil
+  '((buffer-display-time) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+

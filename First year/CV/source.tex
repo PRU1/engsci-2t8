@@ -1,0 +1,235 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Pranav Upreti} \linebreak \linebreak
+\small 437-326-1907 $|$
+\href{mailto:pranav.upreti@mail.utoronto.ca}{\underline{pranav.upreti@mail.utoronto.ca}} $|$
+\href{www.linkedin.com/in/pranav-upreti-a9b2501b4}{\underline{linkedin.com/in/pranav-upreti}} $|$
+\href{https://github.com/PRU1}{\underline{github.com/PRU1}} 
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Toronto}{Toronto, ON}
+      {Engineering Science | 3.90 cGPA | UofT Quantum Computing Club, Dragon Boat team}{2024 -- 2029}
+    \resumeSubheading
+      {Dr. G. W. Williams Secondary School}{Aurora, ON}
+      {OSSD and IBDP | IB score 44/45 | Coding Club, Math Club, Senior Winds Ensemble}{2020 -- 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------Extracurriculars-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Private Tutor}{Nov. 2021 -- August 2024}
+      {Virtual tutor}{Richmond Hill, ON}
+      \resumeItemListStart
+        \resumeItem{Tutored an elementary school student in math and science.}
+        \resumeItem{Taught beyond school curriculum and helped student prepare for Waterloo math contests.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {NRGHacks}{Aug. 2023 -- Nov. 2023}
+      {Event Organizer and Judge}{Aurora, ON}
+      \resumeItemListStart
+        \resumeItem{Organized an interschool hackathon with 100+ attendees. Due to the success of our event, it has become an annual event.}
+        \resumeItem{Led a team of 7 students to prepare workshops, handbooks, and event logistics. Oversaw marketing and budget.}
+        \resumeItem{Ran an introductory workshop and Pygame and judged participant entries on a panel with professional developers from industry.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Toronto Quantum Computing Club}{Oct. 2024 -- Present}
+      {General member}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Attend weekly lectures on quantum algorithms and hardware.}
+        \resumeItem{Learned about quantum dots, and basic ideas behind superposition and quantum hardware.}
+      \resumeItemListEnd
+
+    
+      
+    
+  \resumeSubHeadingListEnd
+
+
+%-----------Experience-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Deets}{December 2023 - April 2024}
+      {Co-Founder}{Aurora, Ontario}
+      \resumeItemListStart
+        \resumeItem{Developed an AI-powered learning tool to help students with special needs learn more effectively by summarizing content on their screen}
+        \resumeItem{Implemented a pretrained BERT-CNN model from HuggingFace to generate text summaries.}
+        \resumeItem{Validated the idea through discussion with special needs educators in our school community.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Machine Learning Report}{Sept. 2023 -- January 2024}
+      {On the feasibility of 'intelligent' AI}{Aurora, ON}
+      \resumeItemListStart
+        \resumeItem{Self-taught linear algebra and multivariable calculus to understand and discuss the mathematical theory behind neural networks.}
+        \resumeItem{Created a vanilla neural network without machine learning libraries in Python. Ran experiments to test performance with different parameter settings.}
+        \resumeItem{Organized findings effectively in a report.}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\section{Awards}
+
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo Chem 13 News Contest}{2024}
+      {}{}
+      \resumeItemListStart
+      \vspace{-5mm}
+        \resumeItem{98$^{\rm{th}}$ in Canada}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {University of Waterloo Avogadro Contest}{2023}
+      {}{}
+      \resumeItemListStart
+      \vspace{-5mm}
+        \resumeItem{Top 10\% in Canada}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {Ontario Association of Physics Teachers Contest}{2023}
+      {}{}
+      \resumeItemListStart
+      \vspace{-5mm}
+        \resumeItem{13$^{\rm{th}}$ in Canada}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% %-----------Courses-----------
+% \section{Classes}
+ % \begin{itemize}[leftmargin=0.15in, label={}]
+    % \small{\item{
+    % \vspace{1mm}
+     % \textbf{Courses}{: AP Calulus BC, AP Chemistry, AP Physics, AP World History, AP U.S. History, AP Statistics, AP Literature} \\
+
+    % }}
+ % \end{itemize}
+
+%-----------Skill and Interests-----------
+\section{Skills \& Interests}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \vspace{1mm}
+     \textbf{Skills}{: MATLAB, C++, Python (Keras, TensorFlow), HTML/CSS, Java, \LaTeX } \\
+     \vspace{1mm}
+     \textbf{Interests}{: Machine learning, Quantum algorithms, Robotics, Wildlife photography} \\
+     \vspace{1mm}
+    }}
+ \end{itemize}
+\end{document}
